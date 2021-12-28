@@ -1,0 +1,19 @@
+﻿@using CV.Models.Entity
+@model List<Education>
+<div class="resume-section-content">
+    <h2 class="mb-5 text-black">Education</h2>
+    @foreach (var x in Model)
+    {
+        <div class="card text-white bg-black mb-4 shadow-lg p-3 rounded" style="max-width: 75rem;">
+            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                <div class="flex-grow-1">
+                    <h3 class="mb-0">@x.NAME</h3>
+                    <div class="subheading mb-3">@x.FACULTY</div>
+                    <div>@x.SECTION</div>
+                    <p>@x.DESCRIPTION</p>
+                </div>
+                <div>@x.START - @x.FINISH</div>
+            </div>
+        </div>
+    }
+</div>

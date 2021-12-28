@@ -1,0 +1,54 @@
+﻿@using CV.Models.Entity
+@model List<Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<header class="d-flex justify-content-center py-3 bg-white border-bottom">
+    <h2>Contact Page</h2>
+</header>
+<br />
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header p-2">
+                        </div>
+                        <div class="card-body">
+                                <div class="tab-pane" id="timeline">
+                                    <div class="timeline timeline-inverse">
+                                        @foreach (var item in Model)
+                                        {
+                                        <div class="time-label">
+                                            <span class="bg-info">
+                                                @(((DateTime)item.DATE).ToString("dd-MM-yyyy"))
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-comments bg-warning"></i>
+                                            <div class="timeline-item">
+                                                <span class="time">@item.MAIL - @item.PHONE</span>
+                                                <h3 class="timeline-header"><a href="#">@item.NAME</a> @item.SUBJECT</h3>
+                                                <div class="timeline-body">
+                                                   @item.MESSAGE
+                                                </div>
+                                                <div class="timeline-footer">
+                                                    <a href="/Contact/DeleteContact/@item.ID/" class="btn btn-danger btn-sm">Delete Message</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+</html>

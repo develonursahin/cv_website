@@ -1,0 +1,20 @@
+﻿@using CV.Models.Entity
+@model List<Portfolio>
+<section id="works" class="works clearfix">
+
+    <div class="section-header">
+        <h2>Portfolio</h2>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="card card-group border-primary border-3 text-white bg-dark" style="max-width: 18rem; max-height: 36rem;">
+            <img src="@item.IMAGEURL" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-light">@item.PROJECT</h5>
+                <p class="card-text">@item.DEFINITION</p>
+                <a href="@item.PROJECTURL" class="btn btn-primary text-light">Go to Project.</a>
+            </div>
+        </div>
+        <br />
+    }
+</section>
