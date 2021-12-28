@@ -1,6 +1,6 @@
 # CV-Project---DF---Framework
 CV Project - Asp .Net Framework - DataFirst
-CV - Asp .Net Framework MVC Project
+
 This project is the "Dynamic CV Site with Admin Panel from Scratch with Mvc5" project published and implemented on Udemy by educator Murat Yücedağ.
 cloned by following the training series.
 
