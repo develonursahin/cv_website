@@ -1,0 +1,18 @@
+﻿@using CV.Models.Entity
+@model List<Certificate>
+<div class="resume-section-content">
+    <h2 class="mb-5 text-black">Awards & Certifications</h2>
+    <ul class="fa-ul mb-0">
+        @foreach (var x in Model)
+        {
+        <li>
+            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+            @x.NAME
+            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+            @x.CORPORATION            
+            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+            @x.URL
+        </li>
+        }
+    </ul>
+</div>

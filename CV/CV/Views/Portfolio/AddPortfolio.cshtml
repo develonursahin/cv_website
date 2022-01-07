@@ -1,0 +1,28 @@
+﻿@model CV.Models.Entity.Portfolio
+@{
+    ViewBag.Title = "AddPortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<header class="d-flex justify-content-center py-3 bg-white border-bottom">
+    <h2>Add Portfolio Page</h2>
+</header>
+<br />
+<form method="post">
+    @Html.Label("Project")
+    @Html.TextBoxFor(x => x.PROJECT, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PROJECT, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Definition")
+    @Html.TextBoxFor(x => x.DEFINITION, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.DEFINITION, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Project URL")
+    @Html.TextBoxFor(x => x.PROJECTURL, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PROJECTURL, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Image URL")
+    @Html.TextBoxFor(x => x.IMAGEURL, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.IMAGEURL, "", new { @style = "color:red" })
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>

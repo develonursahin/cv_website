@@ -1,0 +1,48 @@
+﻿@using CV.Models.Entity;
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<header class="d-flex justify-content-center py-3 bg-white s">
+    <h2>About Edit Page</h2>
+</header>
+<br />
+<form method="post">
+    @foreach (var item in Model)
+    {
+
+        <label>First Name</label>
+        <input style="width:200px" type="text" name="FIRSTNAME" value="@item.FIRSTNAME" required class="form-control" />
+        <br />
+        <label>Second Name</label>
+        <input style="width:200px" type="text" name="SECONDNAME" value="@item.SECONDNAME" class="form-control" />
+        <br />
+        <label>Surname</label>
+        <input style="width:200px" type="text" name="SURNAME" value="@item.SURNAME" required class="form-control" />
+        <br />
+        <label>Birthday</label>
+        <input style="width:200px" type="date" name="BIRTHDAY" required class="form-control" />
+        <br />
+        <label>Phone</label>
+        <input style="width:200px" type="text" name="PHONE" value="@item.PHONE" class="form-control" />
+        <br />
+        <label>Mail</label>
+        <input style="width:200px" type="text" name="EMAIL" required value="@item.EMAIL" class="form-control" />
+        <br />
+        <label>Location</label>
+        <input style="width:200px" type="text" name="LOCATION" required value="@item.LOCATION" class="form-control" />
+        <br />
+        <label>Driving Licence</label>
+        <input style="width:100px" type="text" name="DRIVINGLICENCE" value="@item.DRIVINGLICENCE" class="form-control" />
+        <br />
+        <label>Photo URL</label>
+        <input type="text" name="PHOTO" value="@item.PHOTO" required class="form-control" />
+        <br />
+        <label>Description</label>
+        <textarea name="DESCRIPTION" class="form-control" required rows="5">@item.DESCRIPTION</textarea>
+        <br />
+    }
+    <br />
+    <button class="btn btn-success">Update</button>
+</form>

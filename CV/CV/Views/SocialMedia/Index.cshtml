@@ -1,0 +1,121 @@
+﻿@using CV.Models.Entity
+@model List<SocialMedia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{ string color = "";}
+@{ string statu = "";}
+@{ bool open = true;}
+@{ bool close = false;}
+
+<header class="d-flex justify-content-center py-3 bg-white border-bottom">
+    <h2>Social Media Page</h2>
+</header>
+<br />
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">Add New Social Media Account</button>
+                                <br />
+                                <br />
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Socail Media</th>
+                                            <th>Status</th>
+                                            <th>Edit</th>
+                                            <th>Change Status</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            if (item.Status == close )
+                                            {
+                                                color = "btn btn-warning btn-sm";
+                                                statu = "Make Passive";
+                                            }
+                                            if (item.Status == open)
+                                            {
+                                                color = "btn btn-success btn-sm";
+                                                statu = "Make Active";
+                                            }
+                                        <tr>
+                                            <td>@item.ID</td>
+                                            <td>@item.Media</td>
+                                            <td>@item.Status</td>
+                                            <td>
+                                                <a href="/SocialMedia/BringSocialMedia/@item.ID" class="btn btn-info btn-sm">
+                                                    <i class="fas fa-pencil-alt">
+                                                    </i>
+                                                    Update
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="/SocialMedia/StatusChangeSocialMedia/@item.ID" class="@color">
+                                                    <i class="fas fa-check">
+                                                    </i>
+                                                    @statu
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="/SocialMedia/DeleteSocialMedia/@item.ID" class="btn btn-danger btn-sm">
+                                                    <i class="fas fa-trash">
+                                                    </i>
+                                                    Delete
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+
+        <div class="modal" id="Modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Social Media Account Add Panel</h2>
+                    </div>
+                    <form method="post" action="/SocialMedia/AddSocialMedia">
+                        <div class="modal-body">
+                            <label>Social Media Name</label>
+                            <input type="text" name="Media" class="form-control" />
+                            <br />
+                            <label>Social Media Link</label>
+                            <input type="text" name="Link" class="form-control" />
+                            <br />
+                            <label>Social Media İcon</label>
+                            <input type="text" name="İcon" class="form-control" />
+                            <br />
+                            <button class="btn btn-info">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

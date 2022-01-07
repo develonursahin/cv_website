@@ -1,0 +1,12 @@
+﻿@using CV.Models.Entity
+@model List<Interests>
+<div class="resume-section-content">
+    <h2 class="mb-5 text-dark">Interests</h2>
+    @foreach (var x in Model)
+    {
+        <h3>@x.HEADER</h3>
+        <p class="mb-0">@x.DESCRIPTION</p>
+        <br />
+    }
+
+</div>

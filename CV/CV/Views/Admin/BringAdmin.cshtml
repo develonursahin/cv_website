@@ -1,0 +1,24 @@
+﻿@model CV.Models.Entity.Admin
+@{
+    ViewBag.Title = "BringAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<header class="d-flex justify-content-center py-3 bg-white border-bottom">
+    <h2>Admin Update Page</h2>
+</header>
+<br />
+<form method="post">
+    @Html.Label("Admin ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ID, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Username")
+    @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Username, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Password")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Password, "", new { @style = "color:red" })
+    <br />
+    <button class="btn btn-info">Update</button>
+</form>

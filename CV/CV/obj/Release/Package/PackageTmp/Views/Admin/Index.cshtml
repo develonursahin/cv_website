@@ -1,0 +1,44 @@
+﻿@using CV.Models.Entity
+@model List<Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<header class="d-flex justify-content-center py-3 bg-white border-bottom">
+    <h2>Admins</h2>
+</header>
+<table class="table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Username</td>
+            <td>@item.Password</td>
+
+
+            <td>
+                <a href="/Admin/BringAdmin/@item.ID" class="btn btn-info btn-sm">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Update
+                </a>
+            </td>
+            <td>
+                <a href="/Admin/DeleteAdmin/@item.ID" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash">
+                    </i>
+                    Delete
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Admin/AddAdmin/" class="btn btn-primary">Add New Experience</a>

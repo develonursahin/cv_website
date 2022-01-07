@@ -1,0 +1,50 @@
+﻿@using CV.Models.Entity
+@model CV.Models.Entity.Contact
+
+
+<div class="resume-section-content">
+    <h2 class="mb-5 text-dark">Get in Touch</h2>
+    <form class="row g-3 needs-validation" novalidate method="post">
+        <div class="col-md-5">
+            <label for="validationCustom01" class="form-label">Name Surname</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Name Surname" required name="NAME" />
+            @*@Html.ValidationMessageFor(x => x.NAME, "", new { @style = "color:red" });*@
+            <div class="valid-feedback">
+                Please enter name and surname.
+            </div>
+        </div>
+        <div class="col-md-5">
+            <label for="validationCustom01" class="form-label">Mail</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="namesurname@gmail.com" required name="MAIL" />
+            <div class="valid-feedback">
+                Please enter mail.
+            </div>
+        </div>
+        <div class="col-md-5">
+            <label for="validationCustom01" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="5551112233" required name="PHONE" />
+            <div>
+                Not required.
+            </div>
+        </div>
+        <div class="col-md-5">
+            <label for="validationCustom01" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Subject" required name="SUBJECT" />
+            <div class="valid-feedback">
+                Please enter subject.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="validationCustom01" class="form-label">Message</label>
+            <textarea class="form-control" id="validationCustom01" rows="6" placeholder="Message..." required name="MESSAGE"></textarea>
+            <div class="valid-feedback">
+                Please enter message.
+            </div>
+        </div>
+
+        <br />
+        <div class="col-12">
+            <button class="btn btn-dark" type="submit">Send Message</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+﻿@model CV.Models.Entity.Admin
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<header class="d-flex justify-content-center py-3 bg-white border-bottom">
+    <h2>Add New Admin Page</h2>
+</header>
+<br />
+<form method="post">
+    <input type="text" name="Username" class="form-control" placeholder="Enter Username" />
+    @Html.ValidationMessageFor(x => x.Username, "", new { @style = "color:red" })
+    <br />
+    <input type="text" name="Password" class="form-control" placeholder="Enter Password" />
+    @Html.ValidationMessageFor(x => x.Password, "", new { @style = "color:red" })
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>

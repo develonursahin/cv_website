@@ -1,0 +1,41 @@
+﻿@model CV.Models.Entity.Education
+@{
+    ViewBag.Title = "AddEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<header class="d-flex justify-content-center py-3 bg-white border-bottom">
+    <h2>Add Education Page</h2>
+</header>
+<br />
+<form method="post">
+    @Html.Label("Name")
+    @Html.TextBoxFor(x => x.NAME, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.NAME, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Faculty")
+    @Html.TextBoxFor(x => x.FACULTY, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.FACULTY, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Section")
+    @Html.TextBoxFor(x => x.SECTION, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SECTION, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Description")
+    @Html.TextBoxFor(x => x.DESCRIPTION, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.DESCRIPTION, "", new { @style = "color:red" })
+    <br />
+    <input type="date" name="START" class="form-control" />
+    @Html.ValidationMessageFor(x => x.START, "", new { @style = "color:red" })
+    <div class="text-black-50">
+        Choose Start Date
+    </div>
+    <br />
+    <input type="date" name="FINISH" class="form-control" />
+    @Html.ValidationMessageFor(x => x.FINISH, "", new { @style = "color:red" })
+    <div class="text-black-50">
+        Choose Finish Date
+    </div>
+    <br />
+
+    <button class="btn btn-info">Add</button>
+</form>
