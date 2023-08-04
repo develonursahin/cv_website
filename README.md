@@ -35,7 +35,6 @@ dotnet restore
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 
-
 4. Projeyi çalıştırın ve tarayıcınızda http://localhost:port adresine giderek uygulamayı görüntüleyin.
 
 ## Katkılar
